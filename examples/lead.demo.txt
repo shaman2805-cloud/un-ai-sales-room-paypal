@@ -1,0 +1,1 @@
+This is a fictional demo request from Alma Studio. We need one landing page and one lead form that stores requests locally. Our budget is 400 USD, and our requested deadline is December 1, 2026.

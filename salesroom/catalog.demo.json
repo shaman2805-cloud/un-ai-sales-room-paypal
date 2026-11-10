@@ -1,0 +1,29 @@
+{
+  "version": "paypal-sandbox-usd-demo-v1",
+  "demo": true,
+  "currency": "USD",
+  "disclaimer": "Fictional USD prices for the PayPal Sandbox demo.",
+  "services": [
+    {
+      "id": "landing_page",
+      "name": "Demo landing page",
+      "available": true,
+      "description": "One landing page based on the confirmed scope.",
+      "unit_price_usd": 120
+    },
+    {
+      "id": "lead_form",
+      "name": "Demo lead form",
+      "available": true,
+      "description": "Save requests locally. External CRM and messaging require separate confirmation.",
+      "unit_price_usd": 30
+    },
+    {
+      "id": "whatsapp_bot",
+      "name": "WhatsApp bot",
+      "available": false,
+      "description": "Provider access, feasibility, and pricing still need confirmation.",
+      "unit_price_usd": null
+    }
+  ]
+}

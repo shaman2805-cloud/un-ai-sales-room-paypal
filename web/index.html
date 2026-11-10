@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>UN AI Sales Room</title>
+  <style>
+    .main-top{flex-wrap:wrap}
+    .workspace-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    :root{color-scheme:light;--ink:#20382e;--muted:#6e7c72;--green:#235d46;--green-light:#e7f0e8;--line:#e1e5dc;--paper:#fffef9;--canvas:#f2f3ec;--amber:#83632e;--amber-bg:#f7eedb;--red:#9a4439;--red-bg:#f9ebe6;--radius:20px;--shadow:0 12px 35px #253a2910}
+    *{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px;line-height:1.5}button,input,textarea{font:inherit}button,a,input,textarea{touch-action:manipulation}button{cursor:pointer}button:disabled{cursor:default;opacity:.48}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #80b69a;outline-offset:3px}button{border:0}a{color:var(--green)}[hidden]{display:none!important}h1,h2,h3,p{margin:0}h2{font-size:20px;line-height:1.3;letter-spacing:-.45px}h3{font-size:15px}small{font-size:12px}.mono{font-variant-numeric:tabular-nums}.muted{color:var(--muted)}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:1.7px;font-weight:700}.small{font-size:12px}.wrap{overflow-wrap:anywhere}.topbar{background:#fffef9e8;border-bottom:1px solid var(--line);min-height:82px;padding:18px 34px;display:flex;justify-content:space-between;align-items:center;gap:20px}.brand{display:flex;align-items:center;gap:13px}.brandmark{width:40px;height:40px;border-radius:12px;background:var(--green);color:white;display:grid;place-items:center;font-size:20px;font-weight:750;letter-spacing:-4px;padding-right:4px}.brandname{font-size:19px;font-weight:750;letter-spacing:-.7px}.brandname span{color:#8d9a8e;font-weight:400;margin:0 9px}.topmeta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:flex-end}.chip{border-radius:99px;padding:5px 10px;display:inline-flex;align-items:center;gap:6px;font-size:11px;line-height:1.4;max-width:100%}.chip-demo{background:var(--amber-bg);color:var(--amber);border:1px solid #e8d9b7}.connection{color:var(--muted);font-size:11px;display:flex;align-items:center;gap:6px}.dot{width:6px;height:6px;border-radius:50%;background:#a5aca2;flex:none}.shell{max-width:1530px;margin:0 auto;display:grid;grid-template-columns:286px minmax(0,1fr);min-height:calc(100vh - 83px)}.sidebar{padding:30px 22px;border-right:1px solid var(--line);min-width:0}.sidebar-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding:0 6px}.count{color:var(--muted);font-size:12px}.primary,.secondary,.quiet,.danger-soft{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:11px;padding:11px 17px;min-height:43px;font-size:13px;font-weight:650;transition:background .15s,color .15s}.primary{background:var(--green);color:#fff}.primary:hover:enabled{background:#164b36}.secondary{background:#fffef9;border:1px solid #ccd5c8;color:var(--ink)}.secondary:hover:enabled{background:#eef2e9}.quiet{background:transparent;color:var(--muted);padding:7px 10px;min-height:35px}.quiet:hover:enabled{background:#e6eadf;color:var(--ink)}.new-lead{width:100%;margin-bottom:18px}.lead-list{display:flex;flex-direction:column;gap:9px}.lead-item{width:100%;text-align:left;display:block;padding:15px 14px;border-radius:14px;border:1px solid transparent;background:transparent;color:var(--ink);min-width:0}.lead-item:hover{background:#e9ede2}.lead-item.selected{background:var(--paper);border-color:#c9d6c6;box-shadow:0 3px 12px #20382e05}.lead-name{display:block;font-weight:650;font-size:13px;overflow-wrap:anywhere;line-height:1.45;margin-bottom:7px}.lead-summary{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}.lead-money{font-size:12px;color:var(--muted)}.sidebar-empty{padding:13px 6px;color:var(--muted);font-size:12px}.sidebar-note{border-top:1px solid var(--line);margin-top:27px;padding:18px 6px 0;color:var(--muted);font-size:11px;line-height:1.65}.main{min-width:0;padding:30px 34px 40px}.main-top{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:23px}.main-top .eyebrow{color:#7e8b7f}.welcome{padding:clamp(26px,5vw,72px);background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);min-height:510px;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--shadow);position:relative;overflow:hidden}.welcome:before{content:"";position:absolute;width:220px;height:220px;border:45px solid #edf1e5;border-radius:50%;right:-55px;top:-80px;opacity:.8;pointer-events:none}.welcome-content{position:relative;max-width:600px}.welcome-icon{width:56px;height:56px;border-radius:17px;background:var(--green-light);display:grid;place-items:center;font-size:24px;margin-bottom:26px;color:var(--green)}.welcome h1{font-size:clamp(28px,3vw,43px);line-height:1.13;letter-spacing:-1.8px;max-width:560px;margin-bottom:18px}.welcome p{max-width:490px;font-size:15px;color:var(--muted);margin-bottom:27px;line-height:1.7}.welcome-actions{display:flex;gap:11px;flex-wrap:wrap}.welcome-route{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:46px;font-size:11px;color:var(--muted)}.welcome-route b{width:23px;height:23px;background:#eef1e7;border-radius:50%;display:inline-grid;place-items:center;font-weight:600;margin-right:4px}.route-arrow{opacity:.55}.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:25px;box-shadow:0 3px 15px #20382e03;min-width:0}.lead-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:20px}.lead-heading h1{font-size:26px;line-height:1.2;letter-spacing:-.9px;overflow-wrap:anywhere;margin:7px 0 9px}.lead-submeta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:12px;color:var(--muted)}.status{font-size:11px;border-radius:6px;padding:4px 7px;white-space:normal;background:#edf0e9;color:#657361;line-height:1.35}.status-blocked{background:var(--amber-bg);color:var(--amber)}.status-needs_review{background:#eaf0ef;color:#4f7168}.status-awaiting_approval{background:#e6f0e9;color:#3b6d4e}.status-approved{background:var(--green);color:white}.detail-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(240px,1fr);gap:18px;align-items:start}.left-stack,.right-stack{display:grid;gap:18px;min-width:0}.card-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:17px}.card-head .eyebrow{color:var(--muted)}.quote-head{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:22px}.quote-total{font-size:33px;letter-spacing:-1.2px;font-weight:700;line-height:1.2;white-space:normal;overflow-wrap:anywhere}.quote-total-label{font-size:12px;color:var(--muted);margin-top:6px}.quote-mark{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;background:#edf2e8;color:var(--green);font-size:20px;flex:none}.quote-lines{display:grid;gap:0}.quote-line{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:14px 0;border-top:1px solid #e9ece3}.quote-line strong{font-size:12px;font-weight:650;text-align:right;white-space:nowrap}.quote-line-name{font-size:13px;overflow-wrap:anywhere}.quote-line-unit{font-size:11px;color:var(--muted);margin-top:3px}.quote-note{border-top:1px solid #e9ece3;padding-top:14px;font-size:11px;color:var(--muted);line-height:1.65}.blockers{border-radius:13px;background:var(--amber-bg);color:#74582d;padding:16px 17px;margin-top:20px}.blockers h3{font-size:13px;margin-bottom:7px}.blockers ul{padding-left:17px;margin:0;display:grid;gap:5px;font-size:12px;line-height:1.6}.review-clear{margin-top:19px;background:var(--green-light);color:#3b6546;border-radius:12px;padding:13px 15px;font-size:12px}.request-text{font-size:13px;line-height:1.75;white-space:pre-wrap;overflow-wrap:anywhere}.fact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;border-top:1px solid #e9ece3;margin-top:20px;padding-top:18px}.fact-label{font-size:11px;color:var(--muted);margin-bottom:4px}.fact-value{font-size:13px;overflow-wrap:anywhere}.owner-card{background:#e7ede2;border-color:#d5dece}.owner-card h3{font-size:17px;letter-spacing:-.4px;margin:8px 0}.owner-card p{font-size:12px;color:#65745e;line-height:1.7;margin-bottom:18px}.owner-card .primary,.owner-card .secondary{width:100%;margin-top:8px}.owner-card .eyebrow{color:#728368}.owner-note{font-size:10px;color:#6e7b67;margin-top:14px;line-height:1.6}.route{display:grid;gap:18px}.route-step{display:flex;gap:12px;align-items:flex-start}.step-icon{width:25px;height:25px;flex:none;border-radius:50%;border:1px solid #d5ddcf;color:#8a9783;display:grid;place-items:center;font-size:11px}.route-step.done .step-icon{background:#e5eee0;border-color:#d1dfc9;color:#436f3c}.route-step.current .step-icon{background:var(--green);color:#fff;border-color:var(--green)}.step-name{font-size:12px;font-weight:600;margin:1px 0 2px}.step-description{font-size:11px;color:var(--muted)}.audit-list{display:grid;gap:16px;max-height:270px;overflow:auto;padding-right:5px}.audit-entry{display:flex;gap:11px}.audit-dot{height:6px;width:6px;flex:none;background:#9eaf92;border-radius:50%;margin-top:7px}.audit-name{font-size:12px;overflow-wrap:anywhere}.audit-time{font-size:10px;color:var(--muted);margin-top:3px}.auth-card{max-width:580px;margin:60px auto;padding:35px}.auth-card h1{font-size:25px;letter-spacing:-.7px;margin-bottom:13px}.auth-card p{font-size:14px;color:var(--muted);line-height:1.75}.loading-note{font-size:12px;color:var(--muted);padding:22px 0}.toast{position:fixed;bottom:23px;left:50%;transform:translateX(-50%);background:#244632;color:#fff;padding:13px 20px;border-radius:12px;max-width:min(520px,calc(100% - 32px));font-size:12px;box-shadow:0 5px 30px #20382e25;z-index:20;overflow-wrap:anywhere}.toast.error{background:#8c443c}dialog{border:1px solid #d9e0d2;border-radius:22px;padding:0;max-width:680px;width:calc(100% - 32px);max-height:calc(100dvh - 42px);background:var(--paper);color:var(--ink);box-shadow:0 25px 80px #20382e35}dialog::backdrop{background:#253c2d66;backdrop-filter:blur(3px)}.dialog-head{padding:24px 27px 19px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.dialog-head p{font-size:12px;color:var(--muted);margin-top:7px}.close{font-size:24px;line-height:1;background:transparent;color:#7c8777;padding:0 3px;min-height:30px}.form-body{padding:23px 27px;display:grid;gap:17px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:grid;gap:7px;min-width:0}.field label,.fieldset-label{font-size:12px;font-weight:600}.field input,.field textarea{width:100%;border:1px solid #d8dfd0;border-radius:10px;background:#fffefb;color:var(--ink);padding:10px 12px;min-height:43px}.field textarea{resize:vertical;min-height:94px;line-height:1.6}.field input::placeholder,.field textarea::placeholder{color:#9ba594}.field-help{font-size:11px;color:var(--muted);line-height:1.55}.service-fields{display:grid;gap:8px;margin-top:9px}.service-field{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 13px;border-radius:10px;border:1px solid #e1e6d9;background:#f6f7f0}.service-field label{font-size:12px}.service-field small{display:block;font-size:10px;color:var(--muted);margin-top:2px}.service-field input{width:67px;min-width:67px;border:1px solid #d4ddcc;border-radius:8px;padding:7px 5px;text-align:center;background:var(--paper);color:var(--ink)}.dialog-footer{padding:18px 27px 23px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:15px}.dialog-buttons{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}.inline-error{padding:11px 13px;border-radius:9px;background:var(--red-bg);color:var(--red);font-size:12px;overflow-wrap:anywhere}.footer-hint{font-size:10px;color:var(--muted);line-height:1.5;max-width:220px}
+    @media(min-width:1400px){.main{padding:36px 44px}.sidebar{padding-top:36px}.detail-grid{gap:22px}.left-stack,.right-stack{gap:22px}.card{padding:27px}}
+    @media(max-width:1080px){.topbar{padding:17px 23px}.shell{grid-template-columns:245px minmax(0,1fr)}.sidebar{padding:25px 15px}.main{padding:25px 23px}.detail-grid{grid-template-columns:minmax(0,1fr)}.right-stack{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.owner-card{grid-row:span 2}.card{padding:22px}.topmeta{gap:7px}.brandname{font-size:17px}.brandname span{margin:0 6px}}
+    @media(max-width:720px){.topbar{padding:16px 18px;align-items:flex-start;gap:14px;flex-wrap:wrap}.brandmark{width:34px;height:34px;border-radius:10px;font-size:18px}.brandname{font-size:17px}.brand{gap:9px}.topmeta{justify-content:flex-start;gap:10px;flex-wrap:wrap}.chip-demo{font-size:10px}.connection{font-size:10px}.shell{display:block;min-height:auto}.sidebar{border-right:0;border-bottom:1px solid var(--line);padding:20px 18px}.sidebar-head{padding:0;margin-bottom:12px}.new-lead{margin-bottom:12px;min-height:42px}.lead-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:7px;max-height:240px;overflow:auto}.lead-item{padding:12px}.lead-name{font-size:12px;margin-bottom:5px}.sidebar-note{display:none}.sidebar-empty{padding:3px 0 2px}.main{padding:23px 18px 35px}.main-top{margin-bottom:16px}.welcome{padding:30px 24px;min-height:440px}.welcome h1{font-size:31px;letter-spacing:-1px}.welcome p{font-size:13px;margin-bottom:21px}.welcome-route{margin-top:31px;gap:7px;font-size:10px}.welcome-actions{gap:9px}.welcome-actions button{width:100%}.welcome-icon{margin-bottom:23px;width:48px;height:48px;border-radius:14px}.right-stack{grid-template-columns:minmax(0,1fr)}.owner-card{grid-row:auto}.lead-heading h1{font-size:24px}.lead-heading{gap:10px}.lead-heading .quiet{padding:7px 8px;font-size:11px}.card{padding:21px 19px;border-radius:17px}.quote-total{font-size:29px}.quote-line{gap:11px}.quote-line-name{font-size:12px}.quote-line strong{font-size:11px}.fact-grid{gap:14px}.dialog-head{padding:21px 20px 17px}.form-body{padding:20px}.form-grid{grid-template-columns:minmax(0,1fr);gap:16px}.dialog-footer{padding:17px 20px 20px;align-items:stretch;flex-direction:column}.dialog-buttons{justify-content:stretch}.dialog-buttons button{flex:1}.footer-hint{max-width:none}.dialog-head h2{font-size:19px}.auth-card{margin:30px 18px;padding:27px}.quote-note{font-size:10px}.toast{bottom:16px}.lead-heading .eyebrow{font-size:10px}.status{font-size:10px}}
+    @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+  </style>
+  <style>
+    .payment-card h3{font-size:17px;margin:8px 0}
+    .payment-card .eyebrow{color:var(--green)}
+    .payment-amount{font-size:15px;font-weight:650;margin:10px 0 6px}
+    .payment-balances{display:grid;gap:7px;margin:14px 0}
+    .payment-balances div{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+    .payment-balances dt,.payment-balances dd{margin:0;font-size:12px}
+    .payment-balances dd{font-weight:650;white-space:nowrap}
+    .payment-balances .balance-result{border-top:1px solid var(--line);padding-top:9px;color:var(--green)}
+    .payment-description,.payment-status,.payment-reference{font-size:12px;line-height:1.6}
+    .payment-description,.payment-reference{color:var(--muted)}
+    .payment-status{margin-top:13px}
+    .payment-reference{margin-top:8px;overflow-wrap:anywhere}
+    .payment-card button{width:100%;margin-top:9px}
+    .scope-draft{display:grid;gap:12px;padding:16px;border:1px solid var(--line);border-radius:12px;background:#f6f7f0}
+    .scope-draft ul{margin:6px 0 0;padding-left:19px;overflow-wrap:anywhere}
+    .scope-draft li+li{margin-top:5px}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brandmark" aria-hidden="true">un</span><div class="brandname">UN AI <span>/</span> Sales</div></div>
+    <div class="topmeta"><span class="chip chip-demo">Demo · Fictional prices</span><span class="connection" id="connection"><span class="dot" aria-hidden="true"></span><span id="connectionText">Local owner panel</span></span></div>
+  </header>
+  <section id="authCard" class="card auth-card" aria-live="polite">
+    <div class="eyebrow muted" style="margin-bottom:15px">Owner panel</div>
+    <h1 id="authTitle">Opening your workspace</h1>
+    <p id="authText">Loading leads and checking access.</p>
+  </section>
+  <div id="app" class="shell" hidden>
+    <aside class="sidebar" aria-label="Leads">
+      <div class="sidebar-head"><h3>Leads</h3><span class="count" id="leadCount">0</span></div>
+      <button class="primary new-lead" id="newLead"><span aria-hidden="true">＋</span> New lead</button>
+      <nav class="lead-list" id="leadList" aria-label="Select a lead"></nav>
+      <p class="sidebar-empty" id="sidebarEmpty">Add your first lead to this workspace.</p>
+      <p class="sidebar-note">Review the scope and price before approval. Approved proposals are ready to download.</p>
+    </aside>
+    <main class="main">
+      <div class="main-top">
+        <span class="eyebrow">Workspace</span>
+        <div class="workspace-actions">
+          <button class="secondary" id="connectPaypal" type="button" aria-haspopup="dialog">Connect PayPal Sandbox</button>
+          <span class="chip" id="paypalConnectionStatus" role="status" hidden>PayPal Sandbox connected</span>
+          <button class="quiet" id="refresh" type="button"><span aria-hidden="true">↻</span> Refresh</button>
+        </div>
+      </div>
+      <section class="welcome" id="welcome">
+        <div class="welcome-content">
+          <div class="welcome-icon" aria-hidden="true">↗</div>
+          <h1>From a request<br>to a checked proposal.</h1>
+          <p>Capture the request, check the scope and approve a specific revision. Your decisions stay in the history.</p>
+          <div class="welcome-actions"><button class="primary" id="welcomeNew">Add a lead</button><button class="secondary" id="welcomeDemo">Try an example</button></div>
+          <div class="welcome-route"><span><b>1</b> Lead</span><span class="route-arrow" aria-hidden="true">→</span><span><b>2</b> Review</span><span class="route-arrow" aria-hidden="true">→</span><span><b>3</b> Your decision</span></div>
+        </div>
+      </section>
+      <section id="detail" hidden aria-label="Lead details">
+        <div class="lead-heading"><div><div class="eyebrow muted">Lead details</div><h1 id="clientName"></h1><div class="lead-submeta"><span id="leadStatus" class="status"></span><span id="revision"></span></div></div><button class="quiet" id="editLead">Edit lead</button></div>
+        <div class="detail-grid">
+          <div class="left-stack">
+            <section class="card" aria-labelledby="quoteTitle">
+              <div class="card-head"><h2 id="quoteTitle">Quote breakdown</h2></div>
+              <div class="quote-head"><div><div class="quote-total mono" id="quoteTotal">—</div><div class="quote-total-label">Calculated from the demo catalog</div></div><div class="quote-mark" aria-hidden="true">$</div></div>
+              <div class="quote-lines" id="quoteLines"></div>
+              <p class="quote-note">The prices and companies in this example are fictional.</p>
+              <div class="blockers" id="blockersBox" hidden><h3>Needs clarification</h3><ul id="blockers"></ul></div>
+              <p class="review-clear" id="reviewClear" hidden></p>
+            </section>
+            <section class="card" aria-labelledby="requestTitle"><div class="card-head"><h3 id="requestTitle">Customer request</h3></div><p class="request-text" id="requestText"></p><div class="fact-grid"><div><div class="fact-label">Budget</div><div class="fact-value mono" id="budget"></div></div><div><div class="fact-label">Target date</div><div class="fact-value" id="deadline"></div></div></div></section>
+            <section class="card" aria-labelledby="auditTitle"><div class="card-head"><h3 id="auditTitle">Decision history</h3><span class="small muted" id="auditCount"></span></div><div class="audit-list" id="auditList"></div><p class="small muted" id="auditEmpty" hidden>No events yet.</p></section>
+          </div>
+          <div class="right-stack">
+            <section class="card owner-card" aria-labelledby="ownerTitle">
+              <div class="eyebrow">Owner decision</div>
+              <h3 id="ownerTitle">Review and approval</h3>
+              <p id="ownerDescription"></p>
+              <button class="secondary" id="reviewLead">Run review</button>
+              <button class="primary" id="approveLead">Approve this revision</button>
+              <button class="primary" id="exportLead" hidden>Download proposal <span aria-hidden="true">↓</span></button>
+              <button class="secondary" id="reviewScopeChange" type="button" aria-haspopup="dialog" hidden>Review a change request</button>
+              <div class="owner-note">Changes require a new review and approval. You can share the approved proposal with your customer.</div>
+            </section>
+            <section class="card payment-card" id="paymentCard" aria-labelledby="paymentTitle" hidden>
+              <div class="eyebrow">Test payment</div>
+              <h3 id="paymentTitle">PayPal Sandbox</h3>
+              <p class="payment-amount mono" id="paymentAmount"></p>
+              <dl class="payment-balances" id="paymentBalances" hidden>
+                <div><dt id="paymentQuoteLabel">Approved quote</dt><dd class="mono" id="paymentQuoteTotal"></dd></div>
+                <div><dt>Net paid</dt><dd class="mono" id="paymentNetPaid"></dd></div>
+                <div class="balance-result"><dt id="paymentBalanceLabel"></dt><dd class="mono" id="paymentBalance"></dd></div>
+              </dl>
+              <p class="payment-reference mono" id="paymentLedger" hidden></p>
+              <p class="payment-description">Use a PayPal Sandbox buyer account for this test checkout.</p>
+              <p class="payment-status" id="paymentStatus" role="status" aria-live="polite"></p>
+              <p class="payment-reference mono" id="paymentReference" hidden></p>
+              <button class="primary" id="openPayment" type="button" hidden>Open sandbox checkout</button>
+              <button class="secondary" id="confirmPayment" type="button" hidden>Confirm sandbox payment</button>
+              <button class="secondary" id="refundPayment" type="button" hidden>Refund in Sandbox</button>
+            </section>
+            <section class="card" aria-labelledby="routeTitle"><div class="card-head"><h3 id="routeTitle">Lead progress</h3></div><div class="route"><div class="route-step" id="routeIntake"><span class="step-icon">1</span><div><p class="step-name">Intake</p><p class="step-description">Request, budget and scope</p></div></div><div class="route-step" id="routeReview"><span class="step-icon">2</span><div><p class="step-name">Review</p><p class="step-description">Scope and price checks</p></div></div><div class="route-step" id="routeOwner"><span class="step-icon">3</span><div><p class="step-name">Owner approval</p><p class="step-description">Decision for this revision</p></div></div></div></section>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <dialog id="briefDialog" aria-labelledby="dialogTitle">
+    <form id="briefForm">
+      <div class="dialog-head"><div><h2 id="dialogTitle">New lead</h2><p>Enter the details you have. You can fill in missing information later.</p></div><button class="close" id="closeDialog" type="button" aria-label="Close">×</button></div>
+      <div class="form-body">
+        <div class="field"><label for="clientInput">Customer or company</label><input id="clientInput" name="client_name" maxlength="200" placeholder="Name this lead" autocomplete="organization"></div>
+        <div class="field"><label for="requestInput">Customer request</label><textarea id="requestInput" name="request" maxlength="10000" placeholder="Describe the work and the result the customer wants"></textarea></div>
+        <div class="form-grid"><div class="field"><label for="budgetInput">Budget (USD)</label><input id="budgetInput" name="budget_usd" type="number" inputmode="numeric" min="1" step="1" placeholder="Unspecified"><span class="field-help">Use whole US dollars</span></div><div class="field"><label for="deadlineInput">Target date</label><input id="deadlineInput" name="deadline" type="date"><span class="field-help">Requested completion date</span></div></div>
+        <div><div class="fieldset-label" id="servicesLabel">Scope of work</div><p class="field-help" style="margin-top:5px">Enter a quantity for each service you want to include.</p><div class="service-fields" role="group" aria-labelledby="servicesLabel"><div class="service-field"><label for="landingQuantity">Landing page<small>Demo service</small></label><input id="landingQuantity" type="number" min="0" max="100" step="1" value="0" aria-label="Number of landing pages"></div><div class="service-field"><label for="formQuantity">Lead form<small>Demo service</small></label><input id="formQuantity" type="number" min="0" max="100" step="1" value="0" aria-label="Number of lead forms"></div><div class="service-field"><label for="whatsappQuantity">WhatsApp bot<small>Availability pending</small></label><input id="whatsappQuantity" type="number" min="0" max="100" step="1" value="0" aria-label="Number of WhatsApp bots"></div></div></div>
+        <p class="inline-error" id="formError" role="alert" hidden></p>
+      </div>
+      <div class="dialog-footer"><p class="footer-hint">Use fictional data for this demo.</p><div class="dialog-buttons"><button type="button" class="secondary" id="fillDemo">Fill in an example</button><button type="submit" class="primary" id="saveLead">Save lead</button></div></div>
+    </form>
+  </dialog>
+  <dialog id="paypalConnectDialog" aria-labelledby="paypalConnectTitle">
+    <form id="paypalConnectForm" method="dialog" autocomplete="off" novalidate>
+      <div class="dialog-head">
+        <div>
+          <h2 id="paypalConnectTitle">Connect PayPal Sandbox</h2>
+          <p>Use the credentials for a Sandbox app.</p>
+        </div>
+        <button class="close" id="closePaypalConnect" type="button" aria-label="Close PayPal connection">×</button>
+      </div>
+      <div class="form-body">
+        <div class="field">
+          <label for="paypalClientId">Sandbox Client ID</label>
+          <input id="paypalClientId" type="password" autocomplete="new-password" autocapitalize="none" spellcheck="false" maxlength="1024" required autofocus>
+        </div>
+        <div class="field">
+          <label for="paypalClientSecret">Sandbox Secret</label>
+          <input id="paypalClientSecret" type="password" autocomplete="new-password" autocapitalize="none" spellcheck="false" maxlength="1024" required>
+        </div>
+        <a class="small" href="https://developer.paypal.com/dashboard/applications/sandbox" target="_blank" rel="noopener noreferrer">Open Sandbox Apps &amp; Credentials</a>
+        <p class="inline-error" id="paypalConnectError" role="alert" hidden></p>
+      </div>
+      <div class="dialog-footer">
+        <p class="footer-hint">The panel clears both fields after you submit them.</p>
+        <button class="primary" id="submitPaypalConnect" type="submit">Connect Sandbox</button>
+      </div>
+    </form>
+  </dialog>
+  <dialog id="scopeChangeDialog" aria-labelledby="scopeChangeTitle">
+    <form id="scopeChangeForm" method="dialog">
+      <div class="dialog-head">
+        <div>
+          <h2 id="scopeChangeTitle">Review a change request</h2>
+          <p>Check the proposed scope, price and quoted evidence before applying a new revision.</p>
+        </div>
+        <button class="close" id="closeScopeChange" type="button" aria-label="Close scope change review">×</button>
+      </div>
+      <div class="form-body">
+        <div class="field">
+          <label for="scopeRequest">Customer change request</label>
+          <textarea id="scopeRequest" maxlength="2000" placeholder="Paste the customer's request" required></textarea>
+          <button class="quiet" id="fillScopeExample" type="button">Use a fictional example</button>
+        </div>
+        <section class="scope-draft" id="scopeDraftResult" aria-labelledby="scopeDraftTitle" aria-live="polite" hidden>
+          <h3 id="scopeDraftTitle">Draft scope change</h3>
+          <p class="mono" id="scopeDraftTotals"></p>
+          <div>
+            <strong>Proposed changes</strong>
+            <ul id="scopeDraftChanges"></ul>
+          </div>
+          <div id="scopeDraftEvidenceBlock" hidden>
+            <strong>Quoted evidence</strong>
+            <ul id="scopeDraftEvidence" dir="auto"></ul>
+          </div>
+          <div id="scopeDraftQuestionsBlock" hidden>
+            <strong>Questions to resolve</strong>
+            <ul id="scopeDraftQuestions"></ul>
+          </div>
+        </section>
+        <p class="inline-error" id="scopeDraftError" role="alert" hidden></p>
+      </div>
+      <div class="dialog-footer">
+        <p class="footer-hint">A new revision needs its own review and owner approval.</p>
+        <div class="dialog-buttons">
+          <button class="secondary" id="draftScopeChange" type="submit">Draft scope change</button>
+          <button class="primary" id="applyScopeChange" type="button" hidden>Apply as new revision</button>
+        </div>
+      </div>
+    </form>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script>
+    'use strict';
+    const $ = id => document.getElementById(id);
+    const state = {csrf:'',leads:[],current:null,events:[],busy:false,editing:false,
+      paypalEnabled:false,payment:null,settlement:null,paymentError:'',paymentReturn:null,scopeDraft:null};
+    const labels = {blocked:'Needs clarification',needs_review:'Ready for review',awaiting_approval:'Awaiting approval',approved:'Approved'};
+    // Display translations for the known fictional examples. Form inputs keep their original values.
+    const demoText = new Map([
+      ['Студия «Алма» (вымышленная компания)', 'Alma Studio (fictional company)'],
+      ['Лендинг с описанием услуг и формой заявки с локальным сохранением. Состав: один лендинг и одна форма. Вымышленная демонстрационная заявка.', 'A landing page describing the services, with a lead form that stores submissions locally. Scope: one landing page and one form. Fictional demo request.'],
+      ['Демонстрационный лендинг', 'Demo landing page'],
+      ['Демонстрационная форма заявки', 'Demo lead form'],
+      ['WhatsApp-бот', 'WhatsApp bot']
+    ]);
+    const displayText = value => demoText.get(value) ?? value;
+    const messageText = new Map([
+      ['Как называется клиент?', 'What is the customer name?'],
+      ['Какую задачу решаем?', 'What does the customer need?'],
+      ['Какой бюджет в тенге?', 'What is the budget in USD?'],
+      ['Какой срок в формате YYYY-MM-DD?', 'What is the target date?'],
+      ['Какой состав работ подтверждён владельцем?', 'Which services are in scope?'],
+      ['Ожидается JSON.', 'The request format is invalid.'],
+      ['Недопустимый размер запроса.', 'The request is too large.'],
+      ['Ожидается JSON-объект.', 'The request format is invalid.'],
+      ['Недопустимый адрес панели.', 'This panel address is invalid.'],
+      ['Откройте панель владельца на этом компьютере.', 'Open the owner panel on this computer.'],
+      ['Откройте личную ссылку из окна запуска.', 'Open your private link from the launcher.'],
+      ['Нужна личная сессия владельца.', 'Open your private owner session.'],
+      ['Обновите страницу владельца.', 'Refresh the owner panel.'],
+      ['Страница не найдена.', 'Page not found.'],
+      ['Действие не найдено.', 'Action not found.'],
+      ['Не удалось выполнить действие. Проверьте локальные данные.', 'The action could not be completed. Check the local workspace.']
+    ]);
+    function displayMessage(value){
+      if(typeof value!=='string')return value;
+      const translation=messageText.get(value);
+      if(translation)return translation;
+      const unavailable=/^(.+): возможность и цена не подтверждены владельцем\.$/.exec(value);
+      if(unavailable)return displayText(unavailable[1])+' needs confirmed availability and pricing.';
+      const missing=/^Услуга (.+) отсутствует в подтверждённом каталоге\.$/.exec(value);
+      if(missing)return 'Service '+missing[1]+' is missing from the confirmed catalog.';
+      const overBudget=/^Стоимость ([0-9]+) USD превышает бюджет ([0-9]+) USD\.$/.exec(value);
+      if(overBudget)return 'The quote of '+money(Number(overBudget[1]))+' exceeds the budget of '+money(Number(overBudget[2]))+'.';
+      return value;
+    }
+    const moneyFormat = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'});
+    const money = value => typeof value === 'number' && Number.isFinite(value) ? moneyFormat.format(value) : 'Unspecified';
+    const eventId = action => action+'-'+(crypto.randomUUID ? crypto.randomUUID() : Date.now()+'-'+Math.random().toString(36).slice(2));
+    let toastTimer;
+    function toast(message,error=false){clearTimeout(toastTimer);$('toast').textContent=message;$('toast').className='toast'+(error?' error':'');$('toast').hidden=false;toastTimer=setTimeout(()=>{$('toast').hidden=true;},error?8500:4500);}
+    function element(tag,className,text){const el=document.createElement(tag);if(className)el.className=className;if(text!==undefined)el.textContent=String(text);return el;}
+    async function api(path,options={}){
+      const headers={'Accept':'application/json'};
+      if(options.body!==undefined)headers['Content-Type']='application/json';
+      if(options.method && options.method!=='GET' && state.csrf)headers['X-Salesroom-CSRF']=state.csrf;
+      let response;
+      try{response=await fetch(path,{credentials:'same-origin',cache:'no-store',signal:AbortSignal.timeout(15000),...options,headers,body:options.body===undefined?undefined:JSON.stringify(options.body)});}catch(error){throw new Error(error.name==='TimeoutError'?'The server is taking longer than usual. Try refreshing the page.':'The panel is unavailable. Check that the Sales Room launcher is still running.');}
+      const data=await response.json().catch(()=>({error:'The response could not be read. Try again.'}));
+      if(!response.ok){const error=new Error(displayMessage(data.error)||'The action could not be completed.');error.status=response.status;throw error;}
+      return data;
+    }
+    function clearPaypalConnectFields(){
+      $('paypalClientId').value='';
+      $('paypalClientSecret').value='';
+    }
+    function openPaypalConnect(){
+      if(state.busy || state.paypalEnabled)return;
+      clearPaypalConnectFields();
+      $('paypalConnectError').hidden=true;
+      $('paypalConnectDialog').showModal();
+    }
+    function showPaypalConnectError(message){
+      const error=$('paypalConnectError');
+      error.textContent=message;
+      error.hidden=false;
+    }
+    function paypalConnectErrorText(error){
+      if(error.message==='PayPal Sandbox is already connected. Restart the panel to change the app.'){
+        return 'PayPal Sandbox is already connected. Restart the panel to change the app.';
+      }
+      const status=error.status;
+      if(status===401 || status===403)return 'Open your private owner panel and try again.';
+      if(status===400 || status===422)return 'Check the Client ID and Secret for your Sandbox app.';
+      if(status===429)return 'Too many connection attempts. Try again in a moment.';
+      return 'PayPal Sandbox could not verify the connection. Check your Sandbox app and try again.';
+    }
+    async function connectPaypalSandbox(event){
+      event.preventDefault();
+      if(state.busy)return;
+      $('paypalConnectError').hidden=true;
+      if(!$('paypalClientId').value.trim() || !$('paypalClientSecret').value.trim()){
+        clearPaypalConnectFields();
+        showPaypalConnectError('Enter both the Sandbox Client ID and Secret.');
+        return;
+      }
+      state.busy=true;
+      renderButtons();
+      const submit=$('submitPaypalConnect');
+      submit.textContent='Connecting…';
+      try{
+        const response=api('/api/paypal/connect',{method:'POST',body:{
+          client_id:$('paypalClientId').value.trim(),
+          client_secret:$('paypalClientSecret').value.trim()
+        }});
+        clearPaypalConnectFields();
+        const result=await response;
+        if(result.paypal_enabled!==true)throw new Error('Sandbox connection was not verified.');
+        state.paypalEnabled=true;
+        $('paypalConnectDialog').close();
+        try{
+          await refresh();
+          toast('PayPal Sandbox connected.');
+        }catch{
+          toast('PayPal Sandbox connected. Refresh the workspace to load checkout.');
+        }
+      }catch(error){
+        showPaypalConnectError(paypalConnectErrorText(error));
+      }finally{
+        clearPaypalConnectFields();
+        submit.textContent='Connect Sandbox';
+        state.busy=false;
+        renderButtons();
+      }
+    }
+    function readPaymentReturn(search){
+      const params=new URLSearchParams(search);
+      const leadId=params.get('lead');
+      const canceled=params.get('paypal_cancel')==='1';
+      const returned=params.get('paypal_return')==='1';
+      if(!leadId || (!canceled && !returned))return null;
+      return {leadId,canceled,orderId:returned?params.get('token'):null};
+    }
+    function clearPaymentReturnUrl(){
+      const url=new URL(location.href);
+      for(const key of ['paypal_return','paypal_cancel','lead','token','PayerID','payer_id']){
+        url.searchParams.delete(key);
+      }
+      history.replaceState(null,'',url.pathname+url.search+url.hash);
+    }
+    function usdAmount(value){
+      if(typeof value==='number')return Number.isFinite(value) && value>=0 ? value : null;
+      if(typeof value==='string' && /^\d{1,15}(\.\d{1,2})?$/.test(value))return Number(value);
+      return null;
+    }
+    function currentSettlement(lead){
+      const settlement=state.settlement;
+      if(!lead || !settlement || usdAmount(settlement.quote_total)!==lead.quote?.total_usd)return null;
+      return settlement;
+    }
+    function approvedSettlement(lead){
+      if(!state.paypalEnabled || state.paymentError || lead?.status!=='approved' ||
+        lead.quote?.demo!==true || lead.quote.currency!=='USD')return null;
+      return currentSettlement(lead);
+    }
+    function paymentMatchesLead(lead,payment){
+      if(!payment || payment.revision!==lead.revision ||
+        payment.quote_hash!==lead.quote?.hash || payment.currency!=='USD')return false;
+      if(payment.state==='paid')return true;
+      const due=usdAmount(currentSettlement(lead)?.due);
+      return due!==null && due>0 && usdAmount(payment.amount)===due;
+    }
+    function sandboxCheckoutUrl(payment){
+      if(!payment?.order_id || typeof payment.approval_url!=='string')return null;
+      try{
+        const url=new URL(payment.approval_url);
+        const sandboxHost=['www.sandbox.paypal.com','sandbox.paypal.com'].includes(url.hostname);
+        if(url.protocol==='https:' && sandboxHost && !url.port && !url.username && !url.password &&
+          url.searchParams.get('token')===payment.order_id)return url.href;
+      }catch{
+        return null;
+      }
+      return null;
+    }
+    function returnForLead(lead){
+      return state.paymentReturn?.leadId===lead.id ? state.paymentReturn : null;
+    }
+    function renderPayment(){
+      const lead=state.current;
+      const settlement=currentSettlement(lead);
+      const approved=lead?.status==='approved';
+      const visible=approved || (usdAmount(settlement?.captured)??0)>0;
+      const open=$('openPayment');
+      const confirm=$('confirmPayment');
+      const refund=$('refundPayment');
+      $('paymentCard').hidden=!visible;
+      open.hidden=true;
+      confirm.hidden=true;
+      refund.hidden=true;
+      confirm.textContent='Confirm sandbox payment';
+      open.disabled=state.busy;
+      confirm.disabled=state.busy;
+      refund.disabled=state.busy;
+      $('paymentReference').hidden=true;
+      $('paymentLedger').hidden=true;
+      $('paymentBalances').hidden=!settlement;
+      if(!visible)return;
+
+      $('paymentAmount').textContent='Revision '+lead.revision+' · USD';
+      const status=$('paymentStatus');
+      const due=usdAmount(settlement?.due);
+      const credit=usdAmount(settlement?.credit);
+      if(settlement){
+        $('paymentQuoteLabel').textContent=approved?'Approved quote':'Revised quote';
+        $('paymentQuoteTotal').textContent=money(usdAmount(settlement.quote_total));
+        $('paymentNetPaid').textContent=money(usdAmount(settlement.net_paid));
+        $('paymentBalanceLabel').textContent=credit>0
+          ? (approved?'Credit due':'Estimated credit')
+          : (approved?'Amount due':'Estimated amount due');
+        $('paymentBalance').textContent=money(credit>0?credit:due);
+        if(usdAmount(settlement.refunded)>0){
+          $('paymentLedger').textContent='Captured '+money(usdAmount(settlement.captured))+
+            ' · Refunded '+money(usdAmount(settlement.refunded));
+          $('paymentLedger').hidden=false;
+        }
+      }
+      if(!approved){
+        status.textContent='Approve this revision to continue with checkout or a refund.';
+        return;
+      }
+      if(!state.paypalEnabled){
+        status.textContent='Connect PayPal Sandbox from the workspace to continue.';
+        return;
+      }
+      if(lead.quote?.demo!==true || lead.quote.currency!=='USD'){
+        status.textContent='Sandbox checkout is available for approved USD demo quotes.';
+        return;
+      }
+      if(state.paymentError){
+        status.textContent='Checkout status is unavailable. '+state.paymentError;
+        return;
+      }
+      if(!settlement || due===null || credit===null){
+        status.textContent='Refresh to load the balance for this revision.';
+        return;
+      }
+      if(settlement.refund_pending){
+        status.textContent='A sandbox refund is pending. Check its status.';
+        refund.textContent='Check sandbox refund';
+        refund.hidden=false;
+        return;
+      }
+      const refunds=Array.isArray(settlement.refunds)?settlement.refunds:[];
+      if(credit>0){
+        if(refunds.some(refund=>refund.state==='failed')){
+          status.textContent='The sandbox refund failed. The credit is still due.';
+          return;
+        }
+        status.textContent='The revised quote has a credit to refund.';
+        refund.textContent='Refund '+money(credit)+' in Sandbox';
+        refund.hidden=false;
+        return;
+      }
+      const payment=state.payment;
+      if(due===0){
+        status.textContent=usdAmount(settlement.net_paid)>0
+          ?'Sandbox balance settled.'
+          :'No payment is due for this revision.';
+        if(paymentMatchesLead(lead,payment) && payment.state==='paid' && payment.capture_id){
+          $('paymentReference').textContent='Sandbox capture '+payment.capture_id;
+          $('paymentReference').hidden=false;
+        }else{
+          const completed=refunds.find(refund=>refund.state==='refunded' && refund.refund_id);
+          if(completed){
+            $('paymentReference').textContent='Sandbox refund '+completed.refund_id;
+            $('paymentReference').hidden=false;
+          }
+        }
+        return;
+      }
+      if(!payment){
+        status.textContent='This approved quote is ready for a test checkout.';
+        open.textContent='Collect '+money(due)+' in Sandbox';
+        open.hidden=false;
+        return;
+      }
+      if(!paymentMatchesLead(lead,payment)){
+        status.textContent='This checkout belongs to different quote terms. Refresh the lead.';
+        return;
+      }
+      if(payment.state==='paid'){
+        status.textContent='Sandbox payment captured. Refresh to check the remaining balance.';
+        if(payment.capture_id){
+          $('paymentReference').textContent='Sandbox capture '+payment.capture_id;
+          $('paymentReference').hidden=false;
+        }
+        return;
+      }
+      if(payment.state==='failed'){
+        status.textContent='This sandbox checkout failed. Edit and approve a new revision to start again.';
+        return;
+      }
+      if(payment.state==='creating'){
+        status.textContent='Checkout setup is incomplete. Retry to recover the saved checkout.';
+        open.textContent='Retry sandbox checkout';
+        open.hidden=false;
+        return;
+      }
+      if(!['ready','pending','capturing'].includes(payment.state)){
+        status.textContent='Refresh to check the sandbox checkout status.';
+        return;
+      }
+      open.textContent='Continue sandbox checkout';
+      open.hidden=payment.state!=='ready' || !sandboxCheckoutUrl(payment);
+      const returned=returnForLead(lead);
+      if(returned && !returned.canceled && returned.orderId!==payment.order_id){
+        status.textContent='This return does not match the saved checkout. Open the saved checkout for this revision.';
+        return;
+      }
+      if(payment.state==='pending' || payment.state==='capturing'){
+        status.textContent='PayPal may still be processing this payment. Check the saved order.';
+        confirm.textContent='Check sandbox payment';
+      }else if(returned?.canceled){
+        status.textContent='You can continue the saved sandbox checkout.';
+      }else if(returned && returned.orderId===payment.order_id){
+        status.textContent='You are back from PayPal Sandbox. Confirm the payment for this revision.';
+      }else{
+        status.textContent='Approve the checkout in PayPal Sandbox, then confirm it here.';
+      }
+      confirm.hidden=!payment.order_id;
+    }
+    async function openSandboxCheckout(){
+      const lead=state.current;
+      const settlement=approvedSettlement(lead);
+      if(!settlement || settlement.refund_pending || !(usdAmount(settlement.due)>0))return;
+      let payment=state.payment;
+      if(!payment || (paymentMatchesLead(lead,payment) && payment.state==='creating')){
+        const path='/api/leads/'+encodeURIComponent(lead.id)+'/paypal-create';
+        const data=await api(path,{method:'POST',body:{revision:lead.revision,quote_hash:lead.quote.hash}});
+        payment=data.payment;
+        state.payment=payment;
+        if(data.settlement)state.settlement=data.settlement;
+      }
+      if(!paymentMatchesLead(lead,payment)){
+        throw new Error('The checkout does not match this approved quote.');
+      }
+      if(payment.state==='ready'){
+        const url=sandboxCheckoutUrl(payment);
+        if(!url)throw new Error('A valid PayPal Sandbox checkout link is unavailable.');
+        location.assign(url);
+        return;
+      }
+      await refresh(lead.id);
+    }
+    async function confirmSandboxPayment(){
+      const lead=state.current;
+      const payment=state.payment;
+      const settlement=approvedSettlement(lead);
+      if(!settlement || settlement.refund_pending ||
+        !paymentMatchesLead(lead,payment) || !payment.order_id ||
+        !['ready','pending','capturing'].includes(payment.state))return;
+      const returned=returnForLead(lead);
+      if(returned && !returned.canceled && returned.orderId!==payment.order_id){
+        throw new Error('The return does not match this sandbox checkout.');
+      }
+      const path='/api/leads/'+encodeURIComponent(lead.id)+'/paypal-capture';
+      try{
+        const data=await api(path,{method:'POST',body:{
+          revision:lead.revision,quote_hash:lead.quote.hash,order_id:payment.order_id
+        }});
+        state.payment=data.payment;
+        if(data.settlement)state.settlement=data.settlement;
+        else if(data.payment?.state==='paid')state.settlement=null;
+        if(data.payment?.state==='paid')toast('Sandbox payment captured.');
+        else if(data.payment?.state==='ready')toast('Complete approval in PayPal Sandbox, then return to confirm.');
+      }finally{
+        await refresh(lead.id).catch(()=>{});
+      }
+    }
+    async function refundSandboxCredit(){
+      const lead=state.current;
+      const settlement=approvedSettlement(lead);
+      if(!settlement)return;
+      const credit=usdAmount(settlement.credit);
+      if(!settlement.refund_pending){
+        if(Array.isArray(settlement.refunds) && settlement.refunds.some(refund=>refund.state==='failed'))return;
+        if(!(credit>0) || !window.confirm('Refund '+money(credit)+' in PayPal Sandbox for revision '+lead.revision+'?'))return;
+      }
+      const path='/api/leads/'+encodeURIComponent(lead.id)+'/paypal-refund';
+      try{
+        const data=await api(path,{method:'POST',body:{revision:lead.revision,quote_hash:lead.quote.hash}});
+        state.settlement=data.settlement;
+        toast(data.settlement?.refund_pending?'Sandbox refund is pending.':'Sandbox refund status updated.');
+      }finally{
+        await refresh(lead.id).catch(()=>{});
+      }
+    }
+    const draftItems=value=>Array.isArray(value)?value:value==null?[]:[value];
+    function draftItemText(value){
+      if(typeof value==='string')return value;
+      if(typeof value?.quote==='string')return value.quote;
+      if(typeof value?.text==='string')return value.text;
+      return JSON.stringify(value);
+    }
+    function draftForCurrentLead(){
+      const entry=state.scopeDraft;
+      const lead=state.current;
+      if(!entry || lead?.status!=='approved' || entry.leadId!==lead.id ||
+        entry.revision!==lead.revision || entry.quoteHash!==lead.quote?.hash ||
+        entry.request!==$('scopeRequest').value.trim())return null;
+      return entry;
+    }
+    function applicableScopeDraft(){
+      const entry=draftForCurrentLead();
+      const draft=entry?.draft;
+      if(typeof draft?.draft_id!=='string' || !draft.draft_id ||
+        !Array.isArray(draft.questions) || draft.questions.length ||
+        !Array.isArray(draft.changes) || !draft.changes.length)return null;
+      return entry;
+    }
+    function renderScopeDraft(){
+      const draft=draftForCurrentLead()?.draft;
+      $('scopeDraftResult').hidden=!draft;
+      $('applyScopeChange').hidden=!applicableScopeDraft();
+      if(!draft)return;
+      const after=usdAmount(draft.after_total);
+      $('scopeDraftTotals').textContent='Quote total '+money(usdAmount(draft.before_total))+
+        ' → '+(after===null?'Pending clarification':money(after));
+      const changes=draftItems(draft.changes);
+      $('scopeDraftChanges').replaceChildren(...(changes.length
+        ? changes.map(change=>element('li','',String(change.name)+' · '+String(change.from)+' → '+String(change.to)))
+        : [element('li','','No scope change drafted.')]));
+      const evidence=draftItems(draft.evidence);
+      $('scopeDraftEvidenceBlock').hidden=!evidence.length;
+      $('scopeDraftEvidence').replaceChildren(...evidence.map(item=>element('li','',draftItemText(item))));
+      const questions=draftItems(draft.questions);
+      $('scopeDraftQuestionsBlock').hidden=!questions.length;
+      $('scopeDraftQuestions').replaceChildren(...questions.map(item=>element('li','',draftItemText(item))));
+    }
+    function clearScopeDraft(){
+      state.scopeDraft=null;
+      $('scopeDraftError').hidden=true;
+      renderScopeDraft();
+    }
+    function openScopeChange(){
+      if(state.busy || state.current?.status!=='approved')return;
+      $('scopeRequest').value='';
+      clearScopeDraft();
+      $('scopeChangeDialog').showModal();
+    }
+    function scopeDraftError(error){
+      $('scopeDraftError').textContent=error.message;
+      $('scopeDraftError').hidden=false;
+    }
+    async function draftScopeChange(){
+      const lead=state.current;
+      const request=$('scopeRequest').value.trim();
+      clearScopeDraft();
+      if(!request || lead?.status!=='approved')return;
+      try{
+        const draft=await api('/api/leads/'+encodeURIComponent(lead.id)+'/draft-change',{
+          method:'POST',body:{revision:lead.revision,quote_hash:lead.quote.hash,request}
+        });
+        if(!$('scopeChangeDialog').open || $('scopeRequest').value.trim()!==request)return;
+        state.scopeDraft={leadId:lead.id,revision:lead.revision,quoteHash:lead.quote.hash,request,draft};
+        renderScopeDraft();
+      }catch(error){
+        scopeDraftError(error);
+      }
+    }
+    async function applyScopeChange(){
+      const entry=applicableScopeDraft();
+      if(!entry)return;
+      $('scopeDraftError').hidden=true;
+      try{
+        const lead=await api('/api/leads/'+encodeURIComponent(entry.leadId)+'/apply-change',{
+          method:'POST',body:{revision:entry.revision,quote_hash:entry.quoteHash,
+            request:entry.request,draft_id:entry.draft.draft_id}
+        });
+        state.current=lead;
+        state.payment=null;
+        $('scopeChangeDialog').close();
+        renderDetail();
+        try{
+          await refresh(lead.id);
+          toast('New revision created. Run review before approval.');
+        }catch{
+          toast('New revision created. Refresh the workspace to load it.');
+        }
+      }catch(error){
+        scopeDraftError(error);
+      }
+    }
+    function renderButtons(){
+      const lead=state.current;
+      for(const id of ['newLead','welcomeNew','welcomeDemo','refresh','editLead','saveLead','fillDemo','connectPaypal','submitPaypalConnect'])$(id).disabled=state.busy;
+      $('connectPaypal').hidden=state.paypalEnabled;
+      $('paypalConnectionStatus').hidden=!state.paypalEnabled;
+      $('reviewLead').disabled=state.busy||!lead||lead.status==='blocked'||lead.status==='approved';
+      $('approveLead').disabled=state.busy||!lead||lead.status!=='awaiting_approval';
+      $('approveLead').hidden=!!lead&&lead.status==='approved';
+      $('exportLead').hidden=!lead||lead.status!=='approved';
+      $('exportLead').disabled=state.busy||!lead||lead.status!=='approved';
+      $('reviewScopeChange').hidden=lead?.status!=='approved';
+      $('reviewScopeChange').disabled=state.busy;
+      for(const id of ['scopeRequest','fillScopeExample','draftScopeChange','applyScopeChange'])$(id).disabled=state.busy;
+      $('applyScopeChange').hidden=!applicableScopeDraft();
+      $('saveLead').textContent=state.busy?'Saving…':state.editing?'Save changes':'Save lead';
+      renderPayment();
+    }
+    function renderList(){
+      $('leadCount').textContent=String(state.leads.length);$('sidebarEmpty').hidden=state.leads.length>0;$('leadList').replaceChildren();
+      for(const lead of state.leads){
+        const selected=state.current&&state.current.id===lead.id;
+        const button=element('button','lead-item'+(selected?' selected':''));button.type='button';button.setAttribute('aria-current',selected?'true':'false');
+        button.append(element('span','lead-name',displayText(lead.brief?.client_name)||'Untitled lead'));
+        const summary=element('span','lead-summary');summary.append(element('span','status status-'+(lead.status||'blocked'),labels[lead.status]||'Lead'),element('span','lead-money mono',money(lead.quote?.total_usd)));button.append(summary);
+        button.addEventListener('click',()=>{if(!state.busy)perform(()=>selectLead(lead.id));});$('leadList').append(button);
+      }
+    }
+    function dateLabel(value){if(!value)return 'Unspecified';const date=new Date(String(value).slice(0,10)+'T12:00:00');return Number.isNaN(date.getTime())?String(value):new Intl.DateTimeFormat('en-US',{day:'numeric',month:'long',year:'numeric'}).format(date);}
+    function auditName(event){const kind=event.type||event.event_type||event.action||event.kind||'';const mapping={lead_created:'Lead created',created:'Lead created',lead_updated:'Lead updated',updated:'Lead updated',reviewed:'Review completed',review_completed:'Review completed',review:'Review completed',approved:'Owner approved revision',owner_approved:'Owner approved revision',human_approved:'Owner approved revision',proposal_exported:'Proposal saved',proposal_rendered:'Proposal prepared',exported:'Proposal saved',catalog_changed:'Catalog updated',approval_invalidated:'Approval cleared after changes',review_invalidated:'New review required',paypal_order_created:'Sandbox checkout created',paypal_payment_ready:'Sandbox checkout ready',paypal_payment_capturing:'Sandbox confirmation started',paypal_payment_pending:'Sandbox payment pending',paypal_payment_paid:'Sandbox payment captured',paypal_payment_failed:'Sandbox payment failed',paypal_refund_reserved:'Sandbox refund requested',paypal_refund_pending:'Sandbox refund pending',paypal_refund_refunded:'Sandbox refund completed',paypal_refund_failed:'Sandbox refund failed'};return mapping[kind]||'Lead status changed';}
+    function renderAudit(){
+      $('auditList').replaceChildren();$('auditCount').textContent=String(state.events.length);$('auditEmpty').hidden=state.events.length>0;
+      for(const event of [...state.events].reverse()){
+        const row=element('div','audit-entry');row.append(element('span','audit-dot'));const content=element('div');content.append(element('p','audit-name',auditName(event)));
+        const raw=event.at||event.created_at||event.timestamp||event.time;const date=raw?new Date(typeof raw==='number'&&raw<1e12?raw*1000:raw):null;
+        const meta=[];const revision=event.revision||event.details?.revision||event.details?.to_revision;if(revision)meta.push('Revision '+revision);if(date&&!Number.isNaN(date.getTime()))meta.push(new Intl.DateTimeFormat('en-US',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}).format(date));
+        const kind=event.type||event.event_type||event.action||event.kind||'';
+        const amount=usdAmount(event.details?.amount);
+        if(kind.startsWith('paypal_') && amount!==null)meta.unshift(money(amount));
+        if(meta.length)content.append(element('p','audit-time',meta.join(' · ')));row.append(content);$('auditList').append(row);
+      }
+    }
+    function renderDetail(){
+      const lead=state.current;$('welcome').hidden=!!lead;$('detail').hidden=!lead;if(!lead){renderButtons();return;}
+      const brief=lead.brief||{};const quote=lead.quote||{};const blockers=Array.isArray(lead.blockers)?lead.blockers:[];
+      $('clientName').textContent=displayText(brief.client_name)||'Untitled lead';$('leadStatus').textContent=labels[lead.status]||'Lead';$('leadStatus').className='status status-'+(lead.status||'blocked');$('revision').textContent='Revision '+lead.revision;
+      $('quoteTotal').textContent=typeof quote.total_usd==='number'?money(quote.total_usd):'Quote pending';$('quoteLines').replaceChildren();
+      for(const line of quote.lines||[]){const row=element('div','quote-line');const title=element('div');title.append(element('p','quote-line-name',displayText(line.name)||line.service_id),element('p','quote-line-unit',String(line.quantity)+' × '+money(line.unit_price_usd)));row.append(title,element('strong','mono',money(line.total_usd)));$('quoteLines').append(row);}
+      if(!(quote.lines||[]).length)$('quoteLines').append(element('p','small muted','Scope is pending.'));
+      $('blockersBox').hidden=!blockers.length;$('blockers').replaceChildren();for(const item of blockers)$('blockers').append(element('li','',displayMessage(item)));
+      $('reviewClear').hidden=!['awaiting_approval','approved'].includes(lead.status);$('reviewClear').textContent=lead.status==='approved'?'Revision '+lead.revision+' is approved. Your proposal is ready to download.':'Review passed. This revision is ready for your decision.';
+      $('requestText').textContent=displayText(brief.request)||'The customer request is pending.';$('budget').textContent=money(brief.budget_usd);$('deadline').textContent=dateLabel(brief.deadline);
+      const descriptions={blocked:'Resolve the items in the quote breakdown to confirm the scope and price.',needs_review:'Run the review to check this quote before approval.',awaiting_approval:'Check the scope, total and target date. Approval applies to this revision.',approved:'This revision is approved. Download the proposal and check it before sharing.'};$('ownerDescription').textContent=descriptions[lead.status]||'Review the details for this lead.';
+      $('routeIntake').className='route-step '+(lead.status==='blocked'?'current':'done');$('routeReview').className='route-step '+(lead.status==='needs_review'?'current':['awaiting_approval','approved'].includes(lead.status)?'done':'');$('routeOwner').className='route-step '+(lead.status==='approved'?'done':lead.status==='awaiting_approval'?'current':'');renderAudit();renderButtons();
+    }
+    async function selectLead(id){
+      const path='/api/leads/'+encodeURIComponent(id);
+      const [lead,audit]=await Promise.all([api(path),api(path+'/audit')]);
+      let payment=null;
+      let settlement=null;
+      let paymentError='';
+      if(lead.quote?.currency==='USD'){
+        try{
+          const data=await api(path+'/payment');
+          payment=data.payment;
+          settlement=data.settlement;
+        }
+        catch(error){paymentError=error.message;}
+      }
+      state.current=lead;
+      state.events=Array.isArray(audit.events)?audit.events:[];
+      state.payment=payment;
+      state.settlement=settlement;
+      state.paymentError=paymentError;
+      renderList();
+      renderDetail();
+    }
+    async function refresh(preferredId){
+      const data=await api('/api/state');
+      state.leads=Array.isArray(data.leads)?data.leads:[];
+      state.paypalEnabled=data.paypal_enabled===true;
+      const id=[preferredId,state.current?.id,state.leads[0]?.id].find(
+        candidate=>candidate && state.leads.some(lead=>lead.id===candidate)
+      );
+      if(id){await selectLead(id);return;}
+      state.current=null;
+      state.events=[];
+      state.payment=null;
+      state.settlement=null;
+      state.paymentError='';
+      renderList();
+      renderDetail();
+    }
+    async function perform(action,success){if(state.busy)return;state.busy=true;renderButtons();try{await action();if(success)toast(success);}catch(error){toast(error.message,true);}finally{state.busy=false;renderButtons();}}
+    function openForm(edit=false,demo=false){state.editing=edit;$('briefForm').reset();$('formError').hidden=true;$('dialogTitle').textContent=edit?'Edit lead':'New lead';$('fillDemo').hidden=edit;const brief=edit?state.current?.brief:null;if(brief)fillForm(brief);if(demo)fillExample();renderButtons();$('briefDialog').showModal();}
+    function fillForm(brief){$('clientInput').value=brief.client_name||'';$('requestInput').value=brief.request||'';$('budgetInput').value=brief.budget_usd??'';$('deadlineInput').value=brief.deadline||'';const services=brief.services||[];for(const [id,input] of [['landing_page','landingQuantity'],['lead_form','formQuantity'],['whatsapp_bot','whatsappQuantity']])$(input).value=services.find(service=>service.service_id===id)?.quantity||0;}
+    function fillExample(){const future=new Date();future.setDate(future.getDate()+21);const deadline=[future.getFullYear(),String(future.getMonth()+1).padStart(2,'0'),String(future.getDate()).padStart(2,'0')].join('-');fillForm({client_name:'North Demo Studio (fictional customer)',request:'We need one landing page with a services section and a lead form that stores submissions locally. The scope covers the page and local form.',budget_usd:400,deadline,services:[{service_id:'landing_page',quantity:1},{service_id:'lead_form',quantity:1}]});}
+    function formBrief(){const brief={client_name:$('clientInput').value.trim(),request:$('requestInput').value.trim(),deadline:$('deadlineInput').value,services:[]};brief.budget_usd=$('budgetInput').value===''?null:Number($('budgetInput').value);for(const [id,input] of [['landing_page','landingQuantity'],['lead_form','formQuantity'],['whatsapp_bot','whatsappQuantity']]){const quantity=Number($(input).value);if(!Number.isInteger(quantity)||quantity<0)throw new Error('Enter a whole number of zero or more for each service.');if(quantity>0)brief.services.push({service_id:id,quantity});}return brief;}
+    $('newLead').addEventListener('click',()=>openForm());$('welcomeNew').addEventListener('click',()=>openForm());$('welcomeDemo').addEventListener('click',()=>openForm(false,true));$('fillDemo').addEventListener('click',fillExample);$('closeDialog').addEventListener('click',()=>{$('briefDialog').close();});$('editLead').addEventListener('click',()=>openForm(true));$('refresh').addEventListener('click',()=>perform(()=>refresh()));
+    $('briefForm').addEventListener('submit',async event=>{event.preventDefault();if(state.busy)return;state.busy=true;renderButtons();$('formError').hidden=true;try{const brief=formBrief();const result=state.editing?await api('/api/leads/'+encodeURIComponent(state.current.id)+'/update',{method:'POST',body:{changes:brief,event_id:eventId('owner-update')}}):await api('/api/leads',{method:'POST',body:{brief,event_id:eventId('owner-create')}});await refresh(result.id||state.current?.id);$('briefDialog').close();toast(state.editing?'Changes saved.':'Lead saved.');}catch(error){$('formError').textContent=error.message;$('formError').hidden=false;}finally{state.busy=false;renderButtons();}});
+    $('reviewLead').addEventListener('click',()=>perform(async()=>{const id=state.current.id;await api('/api/leads/'+encodeURIComponent(id)+'/review',{method:'POST',body:{event_id:eventId('owner-review')}});await refresh(id);},'Review completed.'));
+    $('approveLead').addEventListener('click',()=>perform(async()=>{const lead=state.current;await api('/api/leads/'+encodeURIComponent(lead.id)+'/approve',{method:'POST',body:{event_id:eventId('owner-approve'),revision:lead.revision,quote_hash:lead.quote.hash}});await refresh(lead.id);},'Revision approved.'));
+    $('exportLead').addEventListener('click',()=>perform(async()=>{const id=state.current.id;const result=await api('/api/leads/'+encodeURIComponent(id)+'/export',{method:'POST',body:{}});const link=document.createElement('a');link.href='/api/leads/'+encodeURIComponent(id)+'/proposal';link.download=result.filename||'proposal.md';document.body.append(link);link.click();link.remove();await refresh(id);},'Proposal ready to download.'));
+    $('openPayment').addEventListener('click',()=>perform(openSandboxCheckout));
+    $('confirmPayment').addEventListener('click',()=>perform(confirmSandboxPayment));
+    $('refundPayment').addEventListener('click',()=>perform(refundSandboxCredit));
+    $('reviewScopeChange').addEventListener('click',openScopeChange);
+    $('closeScopeChange').addEventListener('click',()=>$('scopeChangeDialog').close());
+    $('scopeChangeDialog').addEventListener('close',()=>{
+      $('scopeRequest').value='';
+      clearScopeDraft();
+    });
+    $('scopeRequest').addEventListener('input',clearScopeDraft);
+    $('fillScopeExample').addEventListener('click',()=>{
+      $('scopeRequest').value='Для вымышленной студии добавьте одну форму заявки. Қалған жұмыс өзгермейді.';
+      clearScopeDraft();
+    });
+    $('scopeChangeForm').addEventListener('submit',event=>{
+      event.preventDefault();
+      perform(draftScopeChange);
+    });
+    $('applyScopeChange').addEventListener('click',()=>perform(applyScopeChange));
+    $('connectPaypal').addEventListener('click',openPaypalConnect);
+    $('closePaypalConnect').addEventListener('click',()=>$('paypalConnectDialog').close());
+    $('paypalConnectDialog').addEventListener('close',clearPaypalConnectFields);
+    $('paypalConnectForm').addEventListener('submit',connectPaypalSandbox);
+    window.addEventListener('pageshow',event=>{
+      if(event.persisted && state.csrf)perform(()=>refresh());
+    });
+    async function bootstrap(){
+      state.paymentReturn=readPaymentReturn(location.search);
+      try{
+        const token=new URLSearchParams(location.hash.slice(1)).get('token');
+        if(location.hash)history.replaceState(null,'',location.pathname+location.search);
+        const session=token?await api('/api/session',{method:'POST',body:{token}}):await api('/api/session');
+        state.csrf=session.csrf||'';
+        if(!state.csrf)throw new Error('Owner access could not be confirmed.');
+        await refresh(state.paymentReturn?.leadId);
+        if(state.paymentReturn)clearPaymentReturnUrl();
+        $('authCard').hidden=true;
+        $('app').hidden=false;
+      }catch(error){
+        $('authTitle').textContent='Open the owner panel';
+        $('authText').textContent=error.status===401||error.status===403
+          ?'Run start-sales-room.command to open your private link and select the lead.'
+          :error.message+' Open the panel with start-sales-room.command.';
+      }
+    }
+    bootstrap();
+  </script>
+</body>
+</html>

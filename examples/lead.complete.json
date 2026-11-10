@@ -1,0 +1,19 @@
+{
+  "client_name": "Alma Studio (fictional)",
+  "request": "We need a landing page with a lead form. The company and project details are fictional.",
+  "budget_usd": 400,
+  "deadline": "2026-12-01",
+  "services": [
+    {
+      "service_id": "landing_page",
+      "quantity": 1
+    },
+    {
+      "service_id": "lead_form",
+      "quantity": 1
+    }
+  ],
+  "assumptions": [
+    "Demo data and pricing. Proposal export stays local."
+  ]
+}

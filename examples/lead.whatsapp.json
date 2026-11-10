@@ -1,0 +1,12 @@
+{
+  "client_name": "Example Shop (fictional)",
+  "request": "We need a WhatsApp bot. Provider access still needs verification.",
+  "budget_usd": 400,
+  "deadline": "2026-12-01",
+  "services": [
+    {
+      "service_id": "whatsapp_bot",
+      "quantity": 1
+    }
+  ]
+}
